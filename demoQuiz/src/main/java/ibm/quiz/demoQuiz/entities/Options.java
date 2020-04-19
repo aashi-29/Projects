@@ -6,67 +6,39 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Options  {
-	
+public class Options {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	int id;
-	public int Question_id;
-	String name;
-	String is_answer;
-	
-	
+	String text;
+	Boolean isAnswer;
 	public Options(){
 		
 	}
-
+	
+	public Options(int id, String text, Boolean isAnswer) {
+		super();
+		this.id = id;
+		this.text = text;
+		this.isAnswer = isAnswer;
+	}
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-//	public int getQuestion_id() {
-//		return Question_id;
-//	}
-//
-//	public void setQuestion_id(int question_id) {
-//		Question_id = question_id;
-//	}
-
-	public String getName() {
-		return name;
+	public String getText() {
+		return text;
 	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setText(String text) {
+		this.text = text;
 	}
-
-	public String getIs_answer() {
-		return is_answer;
+	public Boolean getIsAnswer() {
+		return isAnswer;
 	}
-
-	public void setIs_answer(String is_answer) {
-		this.is_answer = is_answer;
+	public void setIsAnswer(Boolean isAnswer) {
+		this.isAnswer = isAnswer;
 	}
-
-	public Options(int id, String name, String is_answer) {
-		super();
-		this.id = id;
-//		Question_id = question_id;
-		this.name = name;
-		this.is_answer = is_answer;
-	}
-
-	@Override
-	public String toString() {
-		return "Options [id=" + id + ", Question_id=" + Question_id + ", name=" + name + ", is_answer=" + is_answer
-				+ "]";
-	}
-
 	
-	
-
 }
